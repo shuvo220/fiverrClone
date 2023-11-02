@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import './navbar.css';
 
 
@@ -7,6 +7,8 @@ function Navbar() {
 
   const[active, setActive] = useState(false);
   const[open, setOpen] = useState(false);
+
+  const {pathname} = useLocation();
 
   const isActive=()=>{
     window.scrollY > 0 ? setActive(true) : setActive(false)
@@ -28,12 +30,12 @@ function Navbar() {
 
   return (
     <>
-        <div className={active ? "navbar_active" : "navbar"}>
+        <div className={active || pathname !== '/' ? "navbar_active" : "navbar"}>
             <div className='container'>
               <div className='logo'>
-                {/* <Link to='/'> */}
+                <Link to='/'>
                   <span className='text'>fiverr</span>
-                {/* </Link> */}
+                </Link>
                   <span className='dot'>.</span>
               </div>
               <div className='links'>
@@ -51,25 +53,32 @@ function Navbar() {
                       {
                         currentUser?.isSeller &&(
                           <>
-                            <span>Gigs</span>
-                            <span>Add New Gig</span>
+                            <Link to='/mygigs'>Gigs</Link>
+                            <Link to='/add'>Add New Gig</Link>
                           </>
                         )
                       }
-                      <span>Orders</span>
-                      <span>Messages</span>
-                      <span>Logout</span>
+                      <Link to='/orders'>Orders</Link>
+                      <Link to='/messages'>Messages</Link>
+                      <Link>Logout</Link>
                     </div>}
                   </div>
                 )}
               </div>
             </div>
-            {active && 
+            {(active || pathname !== '/') && 
               <>
                 <hr />
                 <div className='menu'>
-                  <span>test</span>
-                  <span>test2</span>
+                  <Link className='link' to='/'>Graphic & Design</Link>
+                  <Link className='link' to='/'>Video & Animation</Link>
+                  <Link className='link' to='/'>Writing & Translation</Link>
+                  <Link className='link' to='/'>AI Service</Link>
+                  <Link className='link' to='/'>Digital Merketing</Link>
+                  <Link className='link' to='/'>Music & Audio</Link>
+                  <Link className='link' to='/'>Programming & Tech</Link>
+                  <Link className='link' to='/'>Business</Link>
+                  <Link className='link' to='/'>Lifestyle</Link>
                 </div>
               </>
             }
