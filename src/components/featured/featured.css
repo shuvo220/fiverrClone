@@ -16,20 +16,28 @@
     gap:30px;
 }
 h1{
-    font-size: 50px;
+    font-size: 45px;
 }
-.search{
+h1 i{
+    font-weight: 300;
+}
+/* .search{
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: white;
     border-radius: 5px;
+} */
+.sea{
+    display: flex;
+    align-items: center;
 }
 .searchInput{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap:10px;
+    background-color: white;
+    border-radius: 5px;
 }
 .searchInput img{
     width: 20px;
@@ -49,14 +57,26 @@ h1{
     cursor: pointer;
 }
 .popular{
-
+    display: flex;
+    align-items: center;
+    gap:10px;
 }
 .popular span{
 
 }
 .popular button{
-
+    color:white;
+    background-color: transparent;
+    border:1px solid white;
+    padding:5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
 }
 .right{
-
+    height: 100%;
+}
+.right img{
+    height: 103.5%;
+    object-fit: contain;
 }
