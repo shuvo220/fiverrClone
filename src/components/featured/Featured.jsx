@@ -6,11 +6,13 @@ function Featured() {
     <div className='featured'>
         <div className='container'>
             <div className='left'>
-                <h1>Find the perfect freelance service for your business</h1>
+                <h1>Find the perfect <i>freelance</i> services for your business</h1>
                 <div className='search'>
                     <div className='searchInput'>
-                        <img src='./img/search.png' alt='search icon' />
-                        <input type='text' placeholder='try building mobile app' />
+                        <div className='sea'>
+                            <img src='./img/search.png' alt='search icon' />
+                            <input type='text' placeholder='try building mobile app' />
+                        </div>
                         <button className='searchbtn'>Search</button>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import Featured from '../../components/featured/Featured';
+import TrustedBy from '../../components/trustedBy/TrustedBy';
 import './home.css';
 import React from 'react';
 
@@ -7,6 +8,8 @@ function Home() {
     <>
         <div className='home'>
             <Featured />
+            <TrustedBy />
+        
         </div>
     </>
   )
